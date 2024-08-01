@@ -15,12 +15,12 @@ export default function HeroSection() {
         })}
         justifyContent="center"
         flexDirection="column"
-        alignItems="center"
+        alignItems="start"
       >
-        <Typography variant="h3" fontWeight="500" gutterBottom color="primary.contrastText">
-          Transforming Ideas into Innovative Solutions with Shield&Sword
+        <Typography variant="h4" fontWeight="500" gutterBottom color="primary.contrastText">
+          Transforming Ideas into Innovative Solutions <br /> with Shield&Sword
         </Typography>
-        <Typography variant="h5" fontWeight="500" gutterBottom color="primary.contrastText">
+        <Typography variant="h6" fontWeight="500" gutterBottom color="primary.contrastText">
           Championing Innovation, Empowering Progress - Building Tomorrow's Technology Solutions Today, For a Connected and Sustainable World.
         </Typography>
       </Box>
