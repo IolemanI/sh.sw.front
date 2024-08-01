@@ -14,7 +14,7 @@ export default function DesktopAppBar() {
               alt="Shield&Sword"
               width={80}
               height={28}
-              style={{ width: 160 }}
+              style={{ width: 180 }}
               priority
             />
           </Link>
@@ -34,7 +34,7 @@ export default function DesktopAppBar() {
           <Link href="/#footer" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
             <Button
               onClick={() => null}
-              sx={{ my: 2, display: 'block' }}
+              sx={{ my: 2, height: 54, display: 'block' }}
               variant="contained"
             >
               Get in touch
