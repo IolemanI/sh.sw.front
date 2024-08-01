@@ -14,7 +14,7 @@ export default function DesktopAppBar() {
               alt="Shield&Sword"
               width={80}
               height={28}
-              style={{ width: 180 }}
+              style={{ width: 220 }}
               priority
             />
           </Link>

@@ -17,8 +17,8 @@ export default function HeroSection() {
         flexDirection="column"
         alignItems="start"
       >
-        <Typography variant="h4" fontWeight="500" gutterBottom color="primary.contrastText">
-          Transforming Ideas into Innovative Solutions <br /> with Shield&Sword
+        <Typography variant="h3" component="h1" fontWeight="500" gutterBottom color="primary.contrastText">
+          Transforming Ideas into Innovative Solutions with Shield&Sword
         </Typography>
         <Typography variant="h6" fontWeight="500" gutterBottom color="primary.contrastText">
           Championing Innovation, Empowering Progress - Building Tomorrow's Technology Solutions Today, For a Connected and Sustainable World.

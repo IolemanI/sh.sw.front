@@ -24,7 +24,7 @@ export default function WhatWeDoSection() {
       <Grid container spacing={5}>
         <Grid item xs={6}>
           <Box sx={{ position: 'sticky', top: '100px' }}>
-            <Typography variant="h4" fontWeight="bold">
+            <Typography variant="h4" component="h2">
               Select the service that aligns with your current project requirements.
             </Typography>
 
