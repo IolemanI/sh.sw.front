@@ -11,8 +11,8 @@ export default function TechStackSection() {
 
       <Container maxWidth="sm">
         <Masonry columns={3} spacing={2}>
-          {techStack.map(({ title, icon, width }) => (
-            <TechCard title={title} icon={icon} width={width} />
+          {techStack.map(({ title, icon, width }, i) => (
+            <TechCard key={i} title={title} icon={icon} width={width} />
           ))}
         </Masonry>
       </Container>
