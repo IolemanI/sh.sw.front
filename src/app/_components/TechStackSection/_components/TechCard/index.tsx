@@ -6,15 +6,27 @@ import { TechCardProps } from '@/app/_components/TechStackSection/_components/Te
 
 export default function TechCard({ title, icon, width }: TechCardProps) {
   return (
-    <Card sx={{ width: 180, display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'min-content', p: 2 }}>
+    <Card
+      elevation={0}
+      variant="outlined"
+      sx={{
+        width: 180,
+        minWidth: 180,
+        height: 'min-content',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        p: 2,
+      }}
+    >
       <CardMedia
         component="img"
-        sx={{ width: width || 80, minHeight: 60, objectFit: 'contain' }}
+        sx={{ width: width || 80, height: 80, objectFit: 'contain' }}
         image={icon}
         alt={title}
       />
       <Box sx={{ flex: '1 0 auto', pt: 2 }}>
-        <Typography component="span" variant="h5">
+        <Typography component="span" variant="h6" fontWeight="normal">
           {title}
         </Typography>
       </Box>
