@@ -1,11 +1,12 @@
 import { Container } from '@mui/material';
-import { HeroSection, WhatWeDoSection, TechStackSection, StatisticsWidget } from '@/app/_components/';
+import { HeroSection, WhatWeDoSection, TechStackSection, StatisticsWidget, WhoWeAre } from '@/app/_components/';
 
 export default function Home() {
   return (
     <main>
       <Container maxWidth="xl">
         <HeroSection />
+        <WhoWeAre />
         <WhatWeDoSection />
         <TechStackSection />
         <StatisticsWidget />
