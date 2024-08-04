@@ -1,7 +1,7 @@
 'use client';
 import { Button, Container, Typography } from '@mui/material';
 
-export default function WhoWeAre() {
+export default function WhoWeAreSection() {
   return (
     <section style={{ padding: '50px 0' }}>
       <Typography variant="h4" component="h2" mb={10} textAlign="center">Who we are</Typography>
