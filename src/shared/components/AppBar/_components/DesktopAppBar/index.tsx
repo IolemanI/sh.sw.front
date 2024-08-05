@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { AppBar, Box, Button, Container, Link as MuiLink, Stack, Toolbar } from '@mui/material';
+import { AppBar, Button, Container, Link as MuiLink, Stack, Toolbar } from '@mui/material';
 // import { pages } from '../../data';
 
 export default function DesktopAppBar() {

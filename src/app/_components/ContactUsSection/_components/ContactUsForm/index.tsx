@@ -6,6 +6,7 @@ import { Snackbar, Stack } from '@mui/material';
 import { TextInputField } from '@/shared/elements/TextInputField';
 import { sendContactMail } from '@/lib/mailer';
 import { LoadingButton } from '@mui/lab';
+import { ContactUsSchema } from './data';
 
 type TContactUsForm = {
   name: string;
@@ -38,6 +39,9 @@ export default function ContactUsForm() {
         email: '',
         message: '',
       }}
+      validationSchema={ContactUsSchema}
+      validateOnChange={false}
+      validateOnBlur={false}
       onSubmit={handleSubmit}
     >
       {props => (
@@ -55,12 +59,13 @@ export default function ContactUsForm() {
 
             <TextInputField<TContactUsForm> name="email" formik={props} placeholder="Enter your email" label="Email"/>
 
-            <TextInputField<TContactUsForm> name="message" formik={props} placeholder="Message" label="Message" multiline
+            <TextInputField<TContactUsForm> name="message" formik={props} placeholder="Message" label="Message"
+                                            multiline
                                             maxRows={4}/>
           </Stack>
 
           <LoadingButton
-            disabled={!props.isValid}
+            disabled={!props.isValid || !props.touched}
             loading={props.isSubmitting}
             type="submit"
             variant="contained"
