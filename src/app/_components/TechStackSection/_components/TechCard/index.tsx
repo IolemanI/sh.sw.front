@@ -9,24 +9,29 @@ export default function TechCard({ title, icon, width }: TechCardProps) {
     <Card
       elevation={0}
       variant="outlined"
-      sx={{
-        width: 180,
-        minWidth: 180,
+      sx={(theme) => ({
+        width: 120,
+        minWidth: 120,
+        position: 'relative',
         height: 'min-content',
+        p: 1,
+      })}
+    >
+      <Box sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        p: 2,
-      }}
-    >
-      <CardMedia
-        component="img"
-        sx={{ width: width || 80, height: 80, objectFit: 'contain' }}
-        image={icon}
-        alt={title}
-      />
-      <Box sx={{ flex: '1 0 auto', pt: 2 }}>
-        <Typography component="span" variant="h6" fontWeight="normal">
+        filter: 'grayscale(1) brightness(58%) contrast(7.5) contrast(0.8)',
+        transition: 'filter 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        '&:hover': { filter: 'grayscale(0)' },
+      }}>
+        <CardMedia
+          component="img"
+          sx={{ width: width || 60, height: 60, objectFit: 'contain' }}
+          image={icon}
+          alt={title}
+        />
+        <Typography component="span" variant="body1" gutterBottom mt={1}>
           {title}
         </Typography>
       </Box>

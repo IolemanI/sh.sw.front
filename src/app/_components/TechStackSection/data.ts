@@ -1,25 +1,13 @@
-export const backTechStack = [
-  { title: 'Node.js', icon: '/images/nodejs-icon.svg', width: 100 },
-];
-
-export const frontTechStack = [
+export const techStack = [
+  { title: 'Node.js', icon: '/images/nodejs-icon.svg' },
   { title: 'React.js', icon: '/images/react-icon.svg' },
-  { title: 'Vue.js', icon: '/images/vuejs-icon.svg', width: 70 },
+  { title: 'Vue.js', icon: '/images/vuejs-icon.svg', width: 50 },
   { title: 'Angular', icon: '/images/angular-icon.svg' },
-];
-
-export const mobileTechStack = [
   { title: 'ReactNative', icon: '/images/react-icon.svg' },
-  { title: 'Ionic', icon: '/images/ionic-icon.svg' },
-];
-
-export const infrastructureTechStack = [
+  { title: 'Ionic', icon: '/images/ionic-icon.svg', width: 50 },
   { title: 'AWS', icon: '/images/aws-icon.svg' },
-  { title: 'GCP', icon: '/images/gcp-icon.svg' },
+  { title: 'GCP', icon: '/images/gcp-icon.svg', width: 55 },
   { title: 'Heroku', icon: '/images/heroku-icon.svg' },
-];
-
-export const dbTechStack = [
-  { title: 'NOSQL', icon: '/images/nosql-icon.svg', width: 120 },
+  { title: 'NOSQL', icon: '/images/nosql-icon.svg', width: 60 },
   { title: 'RDBMS', icon: '/images/rdbms-icon.svg' },
 ];

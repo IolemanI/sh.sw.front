@@ -1,64 +1,71 @@
 'use client';
-import { Box, Container, Stack, Typography } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
+import { Box, Container, Typography } from '@mui/material';
+import { animate, motion, useMotionValue } from 'framer-motion';
 import TechCard from '@/app/_components/TechStackSection/_components/TechCard';
-import {
-  backTechStack,
-  dbTechStack,
-  frontTechStack,
-  infrastructureTechStack,
-  mobileTechStack,
-} from '@/app/_components/TechStackSection/data';
+import { techStack, } from '@/app/_components/TechStackSection/data';
+import { useEffect, useState } from 'react';
+import useMeasure from 'react-use-measure';
+
+const FAST_DURATION = 25;
+const SLOW_DURATION = 75;
 
 export default function TechStackSection() {
-  return (
-    <section style={{ padding: '50px 0' }}>
-      <Typography variant="h4" component="h2" mb={10} textAlign="center">Tech stack</Typography>
+  const [duration, setDuration] = useState(FAST_DURATION);
+  let [ref, { width }] = useMeasure();
+  const [mustFinish, setMustFinish] = useState(false);
+  const [rerender, setRerender] = useState(false);
 
-      <Container maxWidth="md">
-        <Carousel next={() => null} prev={() => null}>
-          <Box>
-            <Typography variant="h5" fontWeight="500" textAlign="center" mb={2}>Frontend Tech</Typography>
-            <Stack direction="row" spacing={4} justifyContent="center">
-              {frontTechStack.map(({ title, icon, width }, i) => (
-                <TechCard key={i} title={title} icon={icon} width={width} />
-              ))}
-            </Stack>
-          </Box>
-          <Box>
-            <Typography variant="h5" fontWeight="500" textAlign="center" mb={2}>Backend Tech</Typography>
-            <Stack direction="row" spacing={4} justifyContent="center">
-              {backTechStack.map(({ title, icon, width }, i) => (
-                <TechCard key={i} title={title} icon={icon} width={width} />
-              ))}
-            </Stack>
-          </Box>
-          <Box>
-            <Typography variant="h5" fontWeight="500" textAlign="center" mb={2}>Mobile Tech</Typography>
-            <Stack direction="row" spacing={4} justifyContent="center">
-              {mobileTechStack.map(({ title, icon }, i) => (
-                <TechCard key={i} title={title} icon={icon} />
-              ))}
-            </Stack>
-          </Box>
-          <Box>
-            <Typography variant="h5" fontWeight="500" textAlign="center" mb={2}>Infrastructure</Typography>
-            <Stack direction="row" spacing={4} justifyContent="center">
-              {infrastructureTechStack.map(({ title, icon }, i) => (
-                <TechCard key={i} title={title} icon={icon} />
-              ))}
-            </Stack>
-          </Box>
-          <Box>
-            <Typography variant="h5" fontWeight="500" textAlign="center" mb={2}>Databases</Typography>
-            <Stack direction="row" spacing={4} justifyContent="center">
-              {dbTechStack.map(({ title, icon, width }, i) => (
-                <TechCard key={i} title={title} icon={icon} width={width} />
-              ))}
-            </Stack>
-          </Box>
-        </Carousel>
+  const xTranslation = useMotionValue(0);
+
+  useEffect(() => {
+    let controls;
+    let finalPosition = -width / 2 - 8;
+
+    if (mustFinish) {
+      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+        ease: 'linear',
+        duration: duration * (1 - xTranslation.get() / finalPosition),
+        onComplete: () => {
+          setMustFinish(false);
+          setRerender(!rerender);
+        },
+      });
+    } else {
+      controls = animate(xTranslation, [0, finalPosition], {
+        ease: 'linear',
+        duration: duration,
+        repeat: Infinity,
+        repeatType: 'loop',
+        repeatDelay: 0,
+      });
+    }
+
+    return controls?.stop;
+  }, [rerender, xTranslation, duration, width]);
+
+  return (
+    <Box component="section" sx={{ padding: '50px 0' }}>
+      <Container maxWidth="md" sx={{ height: 180 }}>
+        <Typography variant="h4" component="h2" mb={4} textAlign="start">Tech stack</Typography>
+
+        <motion.div
+          className="absolute left-0 flex gap-4"
+          style={{ x: xTranslation }}
+          ref={ref}
+          onHoverStart={() => {
+            setMustFinish(true);
+            setDuration(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinish(true);
+            setDuration(FAST_DURATION);
+          }}
+        >
+          {[...techStack, ...techStack].map((item, idx) => (
+            <TechCard key={idx} title={item.title} icon={item.icon} width={item.width}/>
+          ))}
+        </motion.div>
       </Container>
-    </section>
+    </Box>
   );
 }
