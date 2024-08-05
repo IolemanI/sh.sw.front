@@ -7,7 +7,7 @@ export default function Footer() {
     <Box component="section" sx={{ pt: '100px', pb: '50px' }}>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <Stack spacing={4}>
               <Box>
                 <Typography variant="h6" mb={1}>Contact Us</Typography>
@@ -28,7 +28,7 @@ export default function Footer() {
               </Box>
             </Stack>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <Typography variant="h6" mb={2}>Navigation</Typography>
 
             <Stack>
@@ -46,7 +46,7 @@ export default function Footer() {
               </MuiLink>
             </Stack>
           </Grid>
-          <Grid item xs={4} display="flex" flexDirection="column">
+          <Grid item xs={12} md={4} display="flex" flexDirection="column">
             <Stack spacing={4}>
               <Box>
                 <Typography variant="h6" mb={1}>Career</Typography>
