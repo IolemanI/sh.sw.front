@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function WhoWeAreSection() {
   return (
-    <section style={{ padding: '50px 0' }}>
+    <section id="who-we-are" style={{ padding: '50px 0' }}>
       <Typography variant="h4" component="h2" mb={10} textAlign="center">Who we are</Typography>
 
       <Container maxWidth="md">

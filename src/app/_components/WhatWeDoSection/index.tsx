@@ -20,7 +20,7 @@ import Link from 'next/link';
 
 export default function WhatWeDoSection() {
   return (
-    <section style={{ padding: '50px 0' }}>
+    <section id="what-we-do" style={{ padding: '50px 0' }}>
       <Grid container spacing={5}>
         <Grid item xs={6}>
           <Box sx={{ position: 'sticky', top: '100px' }}>

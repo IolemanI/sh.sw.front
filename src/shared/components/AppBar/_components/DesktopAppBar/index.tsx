@@ -8,7 +8,7 @@ export default function DesktopAppBar() {
     <AppBar position="sticky" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link href="/" style={{ flexGrow: 1 }}>
+          <Link href="/public" style={{ flexGrow: 1 }}>
             <Image
               src="/images/logo-no-background.svg"
               alt="Shield&Sword"
@@ -31,7 +31,7 @@ export default function DesktopAppBar() {
             ))}
           </Box>
 
-          <Link href="/#contact-us" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
+          <Link href="/public#contact-us" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
             <Button
               sx={{ my: 2, height: 54, display: 'block' }}
               variant="contained"

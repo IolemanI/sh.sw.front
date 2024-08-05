@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
-import { AppBar } from './_components/';
+import AppBar from '@/shared/components/AppBar';
+import Footer from '@/shared/components/Footer';
 import theme from '../theme';
 import './globals.css';
 
@@ -22,6 +23,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <AppBar />
             {children}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

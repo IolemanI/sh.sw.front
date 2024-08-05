@@ -31,13 +31,13 @@ export default function StatisticsWidget() {
               </Box>
               <Divider flexItem orientation="vertical" sx={{ width: 2, background: 'white' }}/>
               <Box width="100%" display="flex" flexDirection="column" p={2}>
-                <Typography variant="h3" component="p" fontWeight={500}>50+</Typography>
-                <Typography variant="subtitle1" component="p" fontWeight={400}>successfully delivered projects for startups</Typography>
+                <Typography variant="h3" component="p" fontWeight={500}>10+</Typography>
+                <Typography variant="subtitle1" component="p" fontWeight={400}>clients of 2+ years</Typography>
               </Box>
               <Divider flexItem orientation="vertical" sx={{ width: 2, background: 'white' }}/>
               <Box width="100%" display="flex" flexDirection="column" p={2}>
-                <Typography variant="h3" component="p" fontWeight={500}>10+</Typography>
-                <Typography variant="subtitle1" component="p" fontWeight={400}>countries on our global delivery map</Typography>
+                <Typography variant="h3" component="p" fontWeight={500}>50+</Typography>
+                <Typography variant="subtitle1" component="p" fontWeight={400}>team members</Typography>
               </Box>
             </Stack>
           </Grid>
