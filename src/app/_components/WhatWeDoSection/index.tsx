@@ -28,9 +28,8 @@ export default function WhatWeDoSection() {
               Select the service that aligns with your current project requirements.
             </Typography>
 
-            <Link href="/#footer">
+            <Link href="/#contact-us">
               <Button
-                onClick={() => null}
                 sx={{ my: 2, height: 54, display: 'block' }}
                 variant="contained"
               >

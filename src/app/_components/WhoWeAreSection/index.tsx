@@ -1,5 +1,6 @@
 'use client';
 import { Button, Container, Typography } from '@mui/material';
+import Link from 'next/link';
 
 export default function WhoWeAreSection() {
   return (
@@ -19,13 +20,15 @@ export default function WhoWeAreSection() {
           mentorship. Experience the impact of our Agile, bureaucracy-free approach and discover the success driven by
           our culture and values.
         </Typography>
-        <Button
-          onClick={() => null}
-          sx={{ my: 2, height: 54, display: 'block' }}
-          variant="contained"
-        >
-          Contact us
-        </Button>
+
+        <Link href="/#contact-us">
+          <Button
+            sx={{ my: 2, height: 54, display: 'block' }}
+            variant="contained"
+          >
+            Contact us
+          </Button>
+        </Link>
       </Container>
     </section>
   );

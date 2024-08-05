@@ -31,9 +31,8 @@ export default function DesktopAppBar() {
             ))}
           </Box>
 
-          <Link href="/#footer" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
+          <Link href="/#contact-us" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
             <Button
-              onClick={() => null}
               sx={{ my: 2, height: 54, display: 'block' }}
               variant="contained"
             >

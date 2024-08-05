@@ -4,7 +4,7 @@ import ContactUsForm from '@/app/_components/ContactUsSection/_components/Contac
 
 export default function ContactUsSection() {
   return (
-    <section style={{ padding: '50px 0' }}>
+    <section id="contact-us" style={{ padding: '50px 0' }}>
       <Container maxWidth="lg">
         <Box
           sx={(theme) => ({
@@ -30,8 +30,29 @@ export default function ContactUsSection() {
               p: 4,
               color: theme.palette.primary.contrastText,
             })}>
-              <Typography variant="h4" component="h2">
+              <Typography variant="h4" component="h2" mb={4}>
                 What happens after you get in touch?
+              </Typography>
+
+              <Typography variant="h5" component="h2" gutterBottom>
+                1
+              </Typography>
+              <Typography variant="body1" component="p" mb={4}>
+                Our expert will contact you within 12 hours to provide a consultancy and further support
+              </Typography>
+
+              <Typography variant="h5" component="h2" gutterBottom>
+                2
+              </Typography>
+              <Typography variant="body1" component="p" mb={4}>
+                We will clarify the requirements and set up an engagement process to make your journey smooth
+              </Typography>
+
+              <Typography variant="h5" component="h2" gutterBottom>
+                3
+              </Typography>
+              <Typography variant="body1" component="p" mb={4}>
+                Based on the info gathered and your business objectives, you’ll get a detailed project vision
               </Typography>
             </Grid>
           </Grid>

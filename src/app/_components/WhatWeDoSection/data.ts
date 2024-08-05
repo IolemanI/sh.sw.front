@@ -10,7 +10,7 @@ export const softwareEngineering = [
 export const rnd = [
   'Software R&D as a Service',
   'MVP Development',
-  'PcC Development',
+  'PoC Development',
 ];
 
 export const design = [
