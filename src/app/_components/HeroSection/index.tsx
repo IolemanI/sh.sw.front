@@ -21,7 +21,7 @@ export default function HeroSection() {
           Transforming Ideas into Innovative Solutions with Shield&Sword
         </Typography>
         <Typography variant="h6" fontWeight="500" gutterBottom color="primary.contrastText">
-          Championing Innovation, Empowering Progress - Building Tomorrow's Technology Solutions Today, For a Connected and Sustainable World.
+          Championing Innovation, Empowering Progress - Building Tomorrow&apos;s Technology Solutions Today, For a Connected and Sustainable World.
         </Typography>
       </Box>
     </section>

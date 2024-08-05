@@ -41,7 +41,7 @@ export default function TechStackSection() {
     }
 
     return controls?.stop;
-  }, [rerender, xTranslation, duration, width]);
+  }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
     <Box id="tech-stack" component="section" sx={{ padding: '50px 0' }}>
