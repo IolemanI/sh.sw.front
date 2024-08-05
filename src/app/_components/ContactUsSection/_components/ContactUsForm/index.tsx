@@ -1,9 +1,11 @@
 'use client';
 import { Formik } from 'formik';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { FormikHelpers } from 'formik/dist/types';
-import { Button, Stack } from '@mui/material';
+import { Snackbar, Stack } from '@mui/material';
 import { TextInputField } from '@/shared/elements/TextInputField';
+import { sendContactMail } from '@/lib/mailer';
+import { LoadingButton } from '@mui/lab';
 
 type TContactUsForm = {
   name: string;
@@ -14,9 +16,18 @@ type TContactUsForm = {
 };
 
 export default function ContactUsForm() {
-  const handleSubmit = useCallback((values: TContactUsForm, actions: FormikHelpers<TContactUsForm>) => {
-    console.log(' > values', values);
+  const [emailSentNotify, setEmailSentNotify] = useState(false);
+
+  const handleSubmit = useCallback(async (values: TContactUsForm, actions: FormikHelpers<TContactUsForm>) => {
+    await sendContactMail({
+      from_name: values.name,
+      from_email: values.email,
+      phone_number: values.phoneNumber,
+      message: values.message,
+    });
     actions.setSubmitting(false);
+    actions.resetForm();
+    setEmailSentNotify(true);
   }, []);
 
   return (
@@ -48,15 +59,25 @@ export default function ContactUsForm() {
                                             maxRows={4}/>
           </Stack>
 
-          <Button
+          <LoadingButton
             disabled={!props.isValid}
+            loading={props.isSubmitting}
             type="submit"
             variant="contained"
             color="primary"
             size="large"
           >
             Get In Touch
-          </Button>
+          </LoadingButton>
+
+          {emailSentNotify && (
+            <Snackbar
+              open
+              onClose={() => setEmailSentNotify(false)}
+              autoHideDuration={3000}
+              message="Thank you! Your email has been successfully sent"
+            />
+          )}
         </form>
       )}
     </Formik>
