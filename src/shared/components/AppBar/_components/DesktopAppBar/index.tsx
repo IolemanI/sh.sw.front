@@ -31,7 +31,7 @@ export default function DesktopAppBar() {
             </MuiLink>
           </Stack>
 
-          <Link href="/public#contact-us" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
+          <Link href="#contact-us" style={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
             <Button
               sx={{ my: 2, height: 54, display: 'block' }}
               variant="contained"
