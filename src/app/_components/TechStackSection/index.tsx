@@ -45,7 +45,7 @@ export default function TechStackSection() {
 
   return (
     <Box id="tech-stack" component="section" sx={{ padding: '50px 0' }}>
-      <Container maxWidth="md" sx={{ height: 180, overflow: 'hidden', boxShadow: '' }}>
+      <Container maxWidth="md" sx={{ height: 180, overflow: 'hidden', boxShadow: '', position: 'relative' }}>
         <Typography variant="h4" component="h2" mb={4} textAlign="start">Tech stack</Typography>
 
         <motion.div
